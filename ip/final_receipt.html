@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Receipt - chiron dental hospital</title>
+  <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="dentelo-master/dentelo-master/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Appointment receipt for your visit to chiron dental hospital.">
+  <meta name="keywords" content="appointment receipt, dental services, chiron">
+  <style>
+    body {
+      background-image: url('https://media.gettyimages.com/id/693893643/photo/stethoscope-best.jpg?s=612x612&w=0&k=20&c=bXUp2mjICVHLrIqfBRqd7A6K5M25Lksk4yKAKTrC7x8=');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .receipt {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: rgba(249, 249, 249, 0.9); /* Adding transparency */
+    }
+
+    .receipt-title {
+      font-size: 5rem;
+      color:rgb(12, 61, 61)
+      margin-bottom: 1rem;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .receipt-details {
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .receipt-details strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #672ab8;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: sienna;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      width: 48%;
+      margin-right: 4%;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .btn:last-child {
+      margin-right: 0;
+    }
+  </style>
+</head>
+<body id="top">
+  <main>
+    <section class="receipt">
+      <h1  class="receipt-title">Appointment Receipt</h1>
+      <div class="receipt-details">
+        <strong>Full Name:</strong>
+        <p id="name"></p>
+        <strong>Email:</strong>
+        <p id="email"></p>
+        <strong>Phone Number:</strong>
+        <p id="phone"></p>
+        <strong>Preferred Date:</strong>
+        <p id="date"></p>
+        <strong>Preferred Time:</strong>
+        <p id="time"></p>
+        <strong>Additional Information:</strong>
+        <p id="message"></p>
+      </div>
+      <button class="btn" onclick="bookAppointment()">Book Appointment</button>
+      <button class="btn" onclick="window.print()">Print</button>
+    </section>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.getElementById('name').textContent = localStorage.getItem('name');
+      document.getElementById('email').textContent = localStorage.getItem('email');
+      document.getElementById('phone').textContent = localStorage.getItem('phone');
+      document.getElementById('date').textContent = localStorage.getItem('date');
+      document.getElementById('time').textContent = localStorage.getItem('time');
+      document.getElementById('message').textContent = localStorage.getItem('message');
+    });
+
+    function bookAppointment() {
+      const formData = new FormData();
+      formData.append('name', localStorage.getItem('name'));
+      formData.append('email', localStorage.getItem('email'));
+      formData.append('phone', localStorage.getItem('phone'));
+      formData.append('date', localStorage.getItem('date'));
+      formData.append('time', localStorage.getItem('time'));
+      formData.append('message', localStorage.getItem('message'));
+
+      fetch('save_appointment.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        alert(data);
+        localStorage.clear();
+        // Optionally update UI to indicate booking success
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+  </script>
+</body>
+</html>

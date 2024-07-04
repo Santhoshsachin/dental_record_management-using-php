@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Details - Chiron Dental Hospital</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .form-label {
+      font-weight: bold;
+    }
+    .form-input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .form-input[readonly] {
+      background-color: #f0f0f0;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="section-title">Appointment Details</h2>
+    <form id="appointmentForm" class="appointment-form">
+      <div class="form-group">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" id="name" name="name" class="form-input" readonly>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-input" readonly>
+      </div>
+      <div class="form-group">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" id="phone" name="phone" class="form-input" readonly>
+      </div>
+      <div class="form-group">
+        <label for="date" class="form-label">Preferred Date</label>
+        <input type="date" id="date" name="date" class="form-input" readonly>
+      </div>
+      <div class="form-group">
+        <label for="time" class="form-label">Preferred Time</label>
+        <input type="time" id="time" name="time" class="form-input" readonly>
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Additional Information</label>
+        <textarea id="message" name="message" class="form-input" rows="4" readonly></textarea>
+      </div>
+      <button type="button" class="btn" onclick="printReceipt()">Print Receipt</button>
+    </form>
+  </div>
+
+  <script>
+    function printReceipt() {
+      window.print();
+    }
+
+    // Function to retrieve URL parameters
+    function getUrlParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        name: params.get('name') || '',
+        email: params.get('email') || '',
+        phone: params.get('phone') || '',
+        date: params.get('date') || '',
+        time: params.get('time') || '',
+        message: params.get('message') || ''
+      };
+    }
+
+    // Function to fill form fields with URL parameters
+    function fillFormFields() {
+      const params = getUrlParams();
+      document.getElementById('name').value = params.name;
+      document.getElementById('email').value = params.email;
+      document.getElementById('phone').value = params.phone;
+      document.getElementById('date').value = params.date;
+      document.getElementById('time').value = params.time;
+      document.getElementById('message').value = params.message;
+    }
+
+    // Call fillFormFields function when the page loads
+    window.onload = function() {
+      fillFormFields();
+    };
+  </script>
+</body>
+</html>

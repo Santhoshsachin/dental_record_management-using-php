@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment - chiron cosmetic & dental hospital </title>
+  <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="dentelo-master/dentelo-master/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Book your appointment with chiron. Our expert dentists are ready to provide you with top-notch dental care.">
+  <meta name="keywords" content="book appointment, dentist appointment, dental services, online booking, chiron">
+  <style>
+    .appointment-form .form-input, .appointment-form textarea {
+      width: 100%;
+      padding: 10px 15px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .appointment-form .form-input:focus, .appointment-form textarea:focus {
+      border-color: #007BFF;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.1);
+      outline: none;
+    }
+
+    .appointment-form .form-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .appointment-form .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .appointment-form .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-text {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body id="top">
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header-top">
+      <div class="container">
+        <ul class="contact-list">
+          <li class="contact-item">
+            <ion-icon name="mail-outline"></ion-icon>
+            <a href="mailto:gknmh@gmail.com" class="contact-link">gknmh@gmail.com</a>
+          </li>
+          <li class="contact-item">
+            <ion-icon name="call-outline"></ion-icon>
+            <a href="tel:+91 8489735823" class="contact-link">+91-8489735823</a>
+          </li>
+        </ul>
+        <ul class="social-list">
+          <li><a href="https://facebook.com/dentelo" class="social-link" aria-label="Visit our Facebook page"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="https://instagram.com/dentelo" class="social-link" aria-label="Visit our Instagram page"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="https://twitter.com/dentelo" class="social-link" aria-label="Visit our Twitter page"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="https://youtube.com/dentelo" class="social-link" aria-label="Visit our YouTube page"><ion-icon name="logo-youtube"></ion-icon></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="header-bottom" data-header>
+      <div class="container">
+        <a href="index.html" class="logo">chiron dental hospital</a>
+        <nav class="navbar container" data-navbar aria-label="Main Navigation">
+          <ul class="navbar-list">
+            <li><a href="index.html#home" class="navbar-link" data-nav-link>Home</a></li>
+            <li><a href="index.html#service" class="navbar-link" data-nav-link>Services</a></li>
+            <li><a href="index.html#about" class="navbar-link" data-nav-link>About </a></li>
+            <li><a href="index.html#blog" class="navbar-link" data-nav-link>Blog</a></li>
+            <li><a href="index.html#contact" class="navbar-link" data-nav-link>Contact</a></li>
+          </ul>
+        </nav>
+        <a href="appointment.html" class="btn" aria-label="Book an appointment">Book appointment</a>
+        <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+          <ion-icon name="menu-sharp" aria-hidden="true" class="menu-icon"></ion-icon>
+          <ion-icon name="close-sharp" aria-hidden="true" class="close-icon"></ion-icon>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- Main Content -->
+  <main>
+    <!-- Appointment Section -->
+    <!-- Appointment Form -->
+<section class="section appointment" aria-label="appointment">
+  <div class="container">
+    <h2 class="h2 section-title">Book an Appointment</h2>
+    <p class="section-text">Schedule your visit with our expert dentists. Fill out the form below and we will get back to you to confirm your appointment.</p>
+    <form action="amount.html" method="post" class="appointment-form" onsubmit="storeFormData(); return false;">
+      <div class="form-group">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" id="name" name="name" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" id="phone" name="phone" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="date" class="form-label">Preferred Date</label>
+        <input type="date" id="date" name="date" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="time" class="form-label">Preferred Time</label>
+        <input type="time" id="time" name="time" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Additional Information</label>
+        <textarea id="message" name="message" class="form-input" rows="4"></textarea>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+</section>
+  </main>
+  <!-- Footer Section -->
+  <footer class="footer" id="contact" aria-label="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-brand">
+          <a href="#" class="logo">chiron</a>
+          <p class="footer-text">Providing top-notch dental services to ensure your smile is always bright and healthy.</p>
+        </div>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <div class="contact-icon">
+              <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+            </div>
+            <address class="contact-link">No 6/1, AVM TOWER 7.O 1st Floor, Sivasakthi Nagar, Vilankurichi Main Road, Peelamedu, Coimbatore - 641004</address>
+          </li>
+          <li class="contact-item">
+            <div class="contact-icon">
+              <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+            </div>
+            <a href="tel:+91 8489735823" class="contact-link">+91 8489735823</a>
+          </li>
+          <li class="contact-item">
+            <div class="contact-icon">
+              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+            </div>
+            <a href="mailto:gknmh@gmail.com" class="contact-link">gknmh@gmail.com</a>
+          </li>
+        </ul>
+        <ul class="social-list">
+          <li><a href="https://facebook.com/dentelo" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="https://instagram.com/dentelo" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="https://twitter.com/dentelo" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="https://youtube.com/dentelo" class="social-link"><ion-icon name="logo-youtube"></ion-icon></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2023 <a href="#">chiron</a>. All Rights Reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" nomodule></script>
+  <script>
+    function storeFormData() {
+      const form = document.querySelector('.appointment-form');
+      const formData = new FormData(form);
+      for (let [key, value] of formData.entries()) {
+        localStorage.setItem(key, value);
+      }
+      window.location.href = 'amount.html';
+    }
+  </script>
+</body>
+</html>
